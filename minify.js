@@ -56,7 +56,7 @@ class BashFileIterator {
     // ` -- means Command Substitution
     // ' -- means single-quoted string
     // " -- means double-quoted string
-    
+
     this._delimiters_stack = []
     this._indices_of_escaped_characters = new Set
   }
@@ -125,7 +125,7 @@ class BashFileIterator {
 
   getPreviousCharacters (n, should_not_start_with_escaped = true) {
     /*
-    'should_not_start_with_escaped' means return empty string if the first character is escaped 
+    'should_not_start_with_escaped' means return empty string if the first character is escaped
     */
     const first_character_index = Math.max(0, this.pos - n)
     if (this._indices_of_escaped_characters.has(first_character_index)) {
@@ -319,7 +319,7 @@ class BashFileIterator {
 
   isInsideGroupWhereWhitespacesCannotBeTruncated () {
     return this.isInsideComment() ||
-      this.isInsideDoubleQuotedString() ||
+      this.isInsideSingleQuotedString() ||
       this.isInsideDoubleQuotedString() ||
       this.isInsideHereDoc() ||
       this.isInsideParameterExpansion()
