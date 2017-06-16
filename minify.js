@@ -98,7 +98,7 @@ class BashFileIterator {
       // delimiter that opens group
       if (_type !== '') {
         this._delimiters_stack.push(d)
-      } else {
+      } else if (last_opening == '[') {
         if (last == '[' && d == ']') {
           this._delimiters_stack.pop()
         } else {
