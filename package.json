@@ -17,7 +17,7 @@
     "minify"
   ],
   "devDependencies": {
-    "mocha": "^3.4.2"
+    "mocha": "^5.2.0"
   },
   "scripts": {
     "test": "mocha test.js"
